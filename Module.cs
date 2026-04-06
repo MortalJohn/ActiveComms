@@ -85,7 +85,7 @@ namespace ActiveComms {
         private SettingEntry<bool>            _chatChannelPrefixEnabled;
         private SettingEntry<bool>            _emoteEnabled;
         private SettingEntry<bool>            _onlyWhenGw2Focused;
-        private SettingEntry<bool>            _showCornerIcon;
+        private SettingEntry<bool>            _hideMenuIcon;
         private SettingEntry<bool>            _hideMicPopup;
 
         // ── Recording state ───────────────────────────────────────────────────
@@ -266,7 +266,7 @@ namespace ActiveComms {
                 () => "When enabled, the mic hotkey is ignored unless Guild Wars 2 is the " +
                       "currently active window. Prevents accidental recordings while tabbed out.");
 
-            _showCornerIcon = settings.DefineSetting(
+            _hideMenuIcon = settings.DefineSetting(
                 "HideMenuIcon",
                 false,
                 () => "Hide Menu Icon",
@@ -311,12 +311,12 @@ namespace ActiveComms {
                 _micToggleKey, _micToggleMode, _whisperModel, _transcriptionLanguage,
                 _microphoneDevice, _customDictionary,
                 _chatChannelPrefixEnabled, _emoteEnabled, _onlyWhenGw2Focused,
-                _showCornerIcon, _hideMicPopup,
+                _hideMenuIcon, _hideMicPopup,
                 DirectoriesManager.GetFullDirectoryPath("whispermodels"),
                 _texIcon);
 
-            if (_showCornerIcon.Value) _cornerIcon.Visible = false;
-            _showCornerIcon.SettingChanged += OnShowCornerIconChanged;
+            if (_hideMenuIcon.Value) _cornerIcon.Visible = false;
+            _hideMenuIcon.SettingChanged += OnShowCornerIconChanged;
 
             _transcriptionLanguage.SettingChanged += OnTranscriptionSettingChanged;
             _whisperModel.SettingChanged          += OnWhisperModelSettingChanged;
@@ -404,7 +404,7 @@ namespace ActiveComms {
             if (_micToggleMode != null)          _micToggleMode.SettingChanged          -= OnMicToggleModeChanged;
             if (_transcriptionLanguage != null)  _transcriptionLanguage.SettingChanged  -= OnTranscriptionSettingChanged;
             if (_whisperModel != null)           _whisperModel.SettingChanged           -= OnWhisperModelSettingChanged;
-            if (_showCornerIcon != null)         _showCornerIcon.SettingChanged         -= OnShowCornerIconChanged;
+            if (_hideMenuIcon != null)            _hideMenuIcon.SettingChanged            -= OnShowCornerIconChanged;
 
             _downloadCts?.Cancel();
             _downloadCts?.Dispose();

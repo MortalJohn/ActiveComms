@@ -14,6 +14,8 @@ namespace ActiveComms {
 
     internal static class ModuleSettingsView {
 
+        private static readonly Logger Logger = Logger.GetLogger<Module>();
+
         // ── Layout constants ──────────────────────────────────────────────────
         private const int LABEL_WIDTH   = 210;
         private const int CONTROL_WIDTH = 230;
@@ -32,7 +34,7 @@ namespace ActiveComms {
             SettingEntry<bool>            chatChannelPrefixEnabled,
             SettingEntry<bool>            emoteEnabled,
             SettingEntry<bool>            onlyWhenGw2Focused,
-            SettingEntry<bool>            showCornerIcon,
+            SettingEntry<bool>            hideMenuIcon,
             SettingEntry<bool>            hideMicPopup,
             string                        moduleDataDir,
             AsyncTexture2D                emblem) {
@@ -96,7 +98,7 @@ namespace ActiveComms {
             AddCheckboxRow(flow, "Only When GW2 Focused", onlyWhenGw2Focused,
                 "Ignore the mic hotkey unless Guild Wars 2 is the active foreground window.\nPrevents accidental recordings while tabbed out.");
 
-            AddCheckboxRow(flow, "Hide Menu Icon", showCornerIcon,
+            AddCheckboxRow(flow, "Hide Menu Icon", hideMenuIcon,
                 "When checked, hides the Active Comms icon from the Blish HUD corner icon tray.\nThe module continues to work even when the icon is hidden.");
 
             AddCheckboxRow(flow, "Hide Mic On/Off Popup", hideMicPopup,
@@ -210,10 +212,10 @@ namespace ActiveComms {
                 });
                 StartWatcher(filePath, setting);
             } catch (UnauthorizedAccessException ex) {
-                Logger.GetLogger<Module>().Warn(ex, "File access denied writing vocabulary file to {0} — security software may be blocking it.", dataDir);
+                Logger.Warn(ex, "File access denied writing vocabulary file to {0} — security software may be blocking it.", dataDir);
                 Contingency.NotifyFileSaveAccessDenied(Path.Combine(dataDir, "vocabulary.txt"), "save your custom vocabulary");
             } catch (Exception ex) {
-                Logger.GetLogger<Module>().Warn(ex, "Failed to open vocabulary file.");
+                Logger.Warn(ex, "Failed to open vocabulary file.");
                 ScreenNotification.ShowNotification(
                     "Active Comms: Could not open vocabulary file.",
                     ScreenNotification.NotificationType.Error, null, 5);

@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>ActiveComms</AssemblyName>
     <RootNamespace>ActiveComms</RootNamespace>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <!--
       Must be true so NAudio, Whisper.net, etc. are copied to the output and
       bundled into the .bhm. BlishHUD's own DLLs are excluded separately via
