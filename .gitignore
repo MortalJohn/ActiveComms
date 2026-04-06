@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+
+# Whisper GGML model files — too large for source control.
+*.bin
+*.gguf
+
+# Visual Studio user-specific files
+*.user
+*.suo
