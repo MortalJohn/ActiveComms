@@ -143,15 +143,31 @@ namespace ActiveComms {
 
         // ── Constants ─────────────────────────────────────────────────────────
         private const string DEFAULT_VOCABULARY =
-            "Tyria, Kryta, Ascalon, Orr, Maguuma, Cantha, Elona, " +
-            "Waypoint, Vista, Point of Interest, Hero Point, Mastery Point, " +
-            "zerg, blob, tag, squad, party, map, " +
-            "condi, power, toughness, vitality, precision, ferocity, concentration, expertise, " +
-            "boon, condition, might, fury, quickness, alacrity, aegis, protection, regeneration, stability, swiftness, resistance, resolution, vigor, " +
-            "Firebrand, Chronomancer, Holosmith, Scourge, Renegade, Dragonhunter, Berserker, Spellbreaker, Soulbeast, Deadeye, Weaver, Tempest, Mirage, Reaper, Herald, " +
-            "elementalist, engineer, guardian, mesmer, necromancer, ranger, revenant, thief, warrior, " +
-            "WvW, PvP, PvE, fractals, raid, strike mission, open world, dungeon, meta event, " +
-            "Lion's Arch, Divinity's Reach, Black Citadel, Rata Sum, The Grove, Hoelbrak, Eye of the North";
+            // Boons & conditions
+            "might, fury, quickness, alacrity, aegis, protection, regen, regeneration, stability, stab, swiftness, resistance, resolution, vigor, " +
+            "condi, condition, power, boon, dps, cc, cleave, " +
+            // Combat actions
+            "rez, res, kite, pull, push, stack, spread, burst, precast, stealth, portal, portal bomb, blink, los, " +
+            // Professions & elites
+            "elementalist, weaver, catalyst, tempest, " +
+            "mesmer, chrono, chronomancer, mirage, virtuoso, " +
+            "necro, necromancer, reaper, scourge, harbinger, " +
+            "ranger, druid, soulbeast, untamed, " +
+            "thief, daredevil, deadeye, specter, " +
+            "engi, engineer, scrapper, holo, holosmith, mech, mechanist, " +
+            "warrior, berserker, spellbreaker, bladesworn, " +
+            "guard, guardian, dh, dragonhunter, firebrand, willbender, " +
+            "rev, revenant, herald, vindicator, renegade, " +
+            // WvW
+            "zerg, roam, gvg, comm, commander, tag, pin, sub, subgroup, spike, bomb, regroup, choke, flank, wipe, " +
+            "treb, cata, golem, omega, shield gen, sup, " +
+            "smc, stonemist, keep, tower, camp, sentry, yak, dolyak, lord, inner, outer, wall, gate, bay, hills, garri, garrison, " +
+            // PvE
+            "fractals, strikes, raids, cm, t4, meta, lfg, kp, li, " +
+            // Mounts
+            "raptor, springer, skimmer, jackal, griffon, roller beetle, warclaw, skyscale, siege turtle, " +
+            // Locations
+            "Tyria, Lion's Arch, Maguuma, Elona, Cantha";
 
         private static readonly TimeSpan DebounceInterval =
             TimeSpan.FromMilliseconds(200);
