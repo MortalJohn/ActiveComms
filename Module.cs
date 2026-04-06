@@ -143,7 +143,15 @@ namespace ActiveComms {
 
         // ── Constants ─────────────────────────────────────────────────────────
         private const string DEFAULT_VOCABULARY =
-            "zerg, condi, alac, mesmer, chrono, WvW, Lion's Arch, boon, Holosmith, Firebrand";
+            "Tyria, Kryta, Ascalon, Orr, Maguuma, Cantha, Elona, " +
+            "Waypoint, Vista, Point of Interest, Hero Point, Mastery Point, " +
+            "zerg, blob, tag, squad, party, map, " +
+            "condi, power, toughness, vitality, precision, ferocity, concentration, expertise, " +
+            "boon, condition, might, fury, quickness, alacrity, aegis, protection, regeneration, stability, swiftness, resistance, resolution, vigor, " +
+            "Firebrand, Chronomancer, Holosmith, Scourge, Renegade, Dragonhunter, Berserker, Spellbreaker, Soulbeast, Deadeye, Weaver, Tempest, Mirage, Reaper, Herald, " +
+            "elementalist, engineer, guardian, mesmer, necromancer, ranger, revenant, thief, warrior, " +
+            "WvW, PvP, PvE, fractals, raid, strike mission, open world, dungeon, meta event, " +
+            "Lion's Arch, Divinity's Reach, Black Citadel, Rata Sum, The Grove, Hoelbrak, Eye of the North";
 
         private static readonly TimeSpan DebounceInterval =
             TimeSpan.FromMilliseconds(200);
