@@ -42,7 +42,7 @@ Click the Active Comms corner icon to open the settings window, or click **Open 
 | **Whisper Model** | `Tiny` | Tiny (fastest, ~75 MB), Base (~145 MB), or Small (best accuracy, ~460 MB) |
 | **Language** | `Auto` | Language you'll be speaking. Auto detects automatically; picking a specific language improves accuracy |
 | **Microphone Device** | *(Windows Default)* | Input device to record from. Defaults to the active Windows input device |
-| **Custom Vocabulary** | GW2 terms | Comma-separated words or phrases to bias transcription toward GW2 jargon. Click **Edit Vocabulary in Notepad...** to edit. Whisper uses up to ~224 tokens of vocabulary — terms at the end of the list are dropped first if it exceeds that |
+| **Custom Vocabulary** | GW2 terms | Comma-separated words or phrases to bias transcription toward GW2 jargon. Click **Edit Vocabulary in Notepad...** to edit. There is a limit to how much vocabulary Whisper can use at once — if your list is very long, terms at the end get ignored first |
 | **Chat Channel Commands** | `on` | Prefix your phrase with a channel name to route it to that channel |
 | **Voice Emotes** | `on` | Say a single emote word to perform it in-game |
 | **Only When GW2 Focused** | `on` | Ignore the keybind unless GW2 is the foreground window |
