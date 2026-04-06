@@ -2,7 +2,6 @@
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Blish_HUD;
@@ -104,8 +103,6 @@ namespace ActiveComms {
         private AsyncTexture2D _texIconBig;
 
         // ── Native interop ────────────────────────────────────────────────────
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        private static extern IntPtr LoadLibraryW(string lpFileName);
 
         private void ExtractAndLoadWhisperNatives() {
             string nativesDir = Path.Combine(
